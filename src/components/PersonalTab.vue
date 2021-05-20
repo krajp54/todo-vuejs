@@ -1,5 +1,5 @@
 <template>
-    <b-tab title="Personal">
+    <b-tab title="Personal" active>
         <b-jumbotron bg-variant="light" class="pt-4 pb-4">
             <template #header>Personal Dashboard</template>
 

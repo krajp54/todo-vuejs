@@ -1,5 +1,5 @@
 <template>
-    <b-tab title="Teams" active>
+    <b-tab title="Teams">
         <b-jumbotron bg-variant="light" class="pt-4 pb-4">
             <template #header>Team Dashboard</template>
 
