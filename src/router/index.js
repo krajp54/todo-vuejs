@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/Home.vue";
-import Login from "@/views/Login.vue";
-import Register from "@/views/Register.vue";
+import HomeView from "@/views/HomeView.vue";
+import LoginView from "@/views/LoginView.vue";
+import RegisterView from "@/views/RegisterView.vue";
 
 import { auth } from "@/firebase";
 
@@ -12,7 +12,7 @@ const routes = [
     {
         path: "/",
         name: "Home",
-        component: Home,
+        component: HomeView,
         beforeEnter: (to, from, next) => {
             const isAuthenticated = auth.currentUser;
             if (isAuthenticated) {
@@ -25,7 +25,7 @@ const routes = [
     {
         path: "/login",
         name: "Login",
-        component: Login,
+        component: LoginView,
         beforeEnter: (to, from, next) => {
             const isAuthenticated = auth.currentUser;
             if (isAuthenticated) {
@@ -38,7 +38,7 @@ const routes = [
     {
         path: "/register",
         name: "Register",
-        component: Register,
+        component: RegisterView,
         beforeEnter: (to, from, next) => {
             const isAuthenticated = auth.currentUser;
             if (isAuthenticated) {
@@ -52,13 +52,13 @@ const routes = [
         path: "/dashboard",
         name: "Dashboard",
         meta: { requiresAuth: true },
-        component: () => import("@/views/Dashboard"),
+        component: () => import("@/views/DashboardView"),
     },
     {
         path: "/user",
         name: "User",
         meta: { requiresAuth: true },
-        component: () => import("@/views/User"),
+        component: () => import("@/views/UserView"),
     },
 ];
 

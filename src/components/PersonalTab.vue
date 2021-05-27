@@ -20,9 +20,9 @@
             <b-container fluid v-else class="pb-2">
                 <TaskItem
                     v-for="task in allTasks"
-                    v-bind:key="task.id"
-                    v-bind:task="task"
-                    v-bind:userProfile="userProfile"
+                    :key="task.id"
+                    :task="task"
+                    :userProfile="userProfile"
                     @deleteTask="deleteTask(task)"
                 ></TaskItem>
             </b-container>

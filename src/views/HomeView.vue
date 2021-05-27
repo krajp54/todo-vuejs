@@ -36,8 +36,7 @@
 
 <script>
 export default {
-    name: "Home",
-    components: {},
+    name: "HomeView",
 };
 </script>
 

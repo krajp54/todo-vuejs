@@ -87,9 +87,9 @@
             <b-container fluid v-else class="pb-2">
                 <TeamTask
                     v-for="task in teamTasks"
-                    v-bind:key="task.id"
-                    v-bind:task="task"
-                    v-bind:team="actualTeamInfo"
+                    :key="task.id"
+                    :task="task"
+                    :team="actualTeamInfo"
                     @deleteTask="deleteTask(task)"
                 >
                 </TeamTask>

@@ -1,7 +1,14 @@
 <template>
     <div class="pt-2">
         <b-card
-            class="pt-3 mb-2 container d-flex align-items-center justify-content-center"
+            class="
+                pt-3
+                mb-2
+                container
+                d-flex
+                align-items-center
+                justify-content-center
+            "
             style="max-width: 40%"
         >
             <b-card-img
@@ -15,7 +22,6 @@
 
             <b-card-title class="pt-3">{{ userProfile.name }}</b-card-title>
             <b-card-text>{{ userProfile.email }}</b-card-text>
-            <!-- <b-button>Edit Profile</b-button> -->
         </b-card>
     </div>
 </template>
@@ -24,7 +30,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-    name: "User",
+    name: "UserView",
     computed: {
         ...mapGetters("user", {
             userProfile: "userProfile",

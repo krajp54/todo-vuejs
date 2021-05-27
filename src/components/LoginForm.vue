@@ -1,54 +1,50 @@
 <template>
-    <div class="p-4 container">
-        <b-form @submit.prevent="sendLogin">
-            <b-form-group label="Email:" label-for="text-email">
-                <b-form-input
-                    type="email"
-                    id="text-email"
-                    v-model="form.email"
-                    placeholder="example@example.com"
-                    required
-                ></b-form-input
-            ></b-form-group>
+    <b-form @submit.prevent="sendLogin">
+        <b-form-group label="Email:" label-for="text-email">
+            <b-form-input
+                type="email"
+                id="text-email"
+                v-model="form.email"
+                placeholder="example@example.com"
+                required
+            ></b-form-input
+        ></b-form-group>
 
-            <b-form-group label="Password:" label-for="text-password">
-                <b-form-input
-                    type="password"
-                    id="text-password"
-                    v-model="form.password"
-                    required
-                ></b-form-input>
-            </b-form-group>
+        <b-form-group label="Password:" label-for="text-password">
+            <b-form-input
+                type="password"
+                id="text-password"
+                v-model="form.password"
+                required
+            ></b-form-input>
+        </b-form-group>
 
-            <b-alert show v-if="form.error" variant="danger">{{
-                form.error
-            }}</b-alert>
+        <b-alert show v-if="form.error" variant="danger">{{
+            form.error
+        }}</b-alert>
 
-            <b-button block pill type="submit" variant="primary"
-                >Login</b-button
-            >
+        <b-button block pill type="submit" variant="primary">Login</b-button>
 
-            <b-button block pill variant="secondary" @click="loginGoogle"
-                >Login with Google</b-button
-            >
+        <b-button block pill variant="secondary" @click="loginGoogle"
+            >Login with Google</b-button
+        >
 
-            <b-button block pill variant="dark" @click="loginFacebook"
-                >Login with Facebook</b-button
-            >
+        <b-button block pill variant="dark" @click="loginFacebook"
+            >Login with Facebook</b-button
+        >
 
-            <b-alert show variant="dark" class="mt-2"
-                >Need an account? Click here to
-                <router-link to="/register">register</router-link></b-alert
-            >
-        </b-form>
-    </div>
+        <b-alert show variant="dark" class="mt-2"
+            >Need an account? Click here to
+            <router-link to="/register">register</router-link></b-alert
+        >
+    </b-form>
 </template>
 
 <script>
 import { auth, firebase, userCollection } from "@/firebase";
 
 export default {
-    name: "Login",
+    name: "LoginForm",
     data() {
         return {
             form: {
@@ -107,7 +103,6 @@ export default {
             }
         },
     },
-    computed: {},
 };
 </script>
 

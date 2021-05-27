@@ -12,7 +12,7 @@ import PersonalTab from "@/components/PersonalTab";
 import TeamsTab from "@/components/TeamsTab";
 
 export default {
-    name: "Dashboard",
+    name: "DashboardView",
     components: {
         PersonalTab,
         TeamsTab,

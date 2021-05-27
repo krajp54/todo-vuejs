@@ -1,56 +1,52 @@
 <template>
-    <div class="p-4 container">
-        <b-form @submit.prevent="sendRegister">
-            <b-form-group label="Name:" label-for="text-name">
-                <b-form-input
-                    type="text"
-                    id="text-name"
-                    v-model="form.name"
-                    placeholder="Please enter your name"
-                    :state="nameValidation"
-                    required
-                ></b-form-input>
-                <b-form-invalid-feedback :state="nameValidation">
-                    Please enter a valid name.
-                </b-form-invalid-feedback>
-            </b-form-group>
+    <b-form @submit.prevent="sendRegister">
+        <b-form-group label="Name:" label-for="text-name">
+            <b-form-input
+                type="text"
+                id="text-name"
+                v-model="form.name"
+                placeholder="Please enter your name"
+                :state="nameValidation"
+                required
+            ></b-form-input>
+            <b-form-invalid-feedback :state="nameValidation">
+                Please enter a valid name.
+            </b-form-invalid-feedback>
+        </b-form-group>
 
-            <b-form-group label="Email:" label-for="text-email">
-                <b-form-input
-                    type="email"
-                    id="text-email"
-                    v-model="form.email"
-                    placeholder="example@example.com"
-                    :state="emailValidation"
-                    required
-                ></b-form-input>
-                <b-form-invalid-feedback :state="emailValidation">
-                    Please enter a valid email.
-                </b-form-invalid-feedback>
-            </b-form-group>
+        <b-form-group label="Email:" label-for="text-email">
+            <b-form-input
+                type="email"
+                id="text-email"
+                v-model="form.email"
+                placeholder="example@example.com"
+                :state="emailValidation"
+                required
+            ></b-form-input>
+            <b-form-invalid-feedback :state="emailValidation">
+                Please enter a valid email.
+            </b-form-invalid-feedback>
+        </b-form-group>
 
-            <b-form-group label="Password:" label-for="text-password">
-                <b-form-input
-                    type="password"
-                    id="text-password"
-                    v-model="form.password"
-                    :state="passwordValidation"
-                    required
-                ></b-form-input>
-                <b-form-invalid-feedback :state="passwordValidation">
-                    Your password must be 8-20 characters long.
-                </b-form-invalid-feedback>
-            </b-form-group>
+        <b-form-group label="Password:" label-for="text-password">
+            <b-form-input
+                type="password"
+                id="text-password"
+                v-model="form.password"
+                :state="passwordValidation"
+                required
+            ></b-form-input>
+            <b-form-invalid-feedback :state="passwordValidation">
+                Your password must be 8-20 characters long.
+            </b-form-invalid-feedback>
+        </b-form-group>
 
-            <b-alert v-if="form.error" show variant="danger">{{
-                form.error
-            }}</b-alert>
+        <b-alert v-if="form.error" show variant="danger">{{
+            form.error
+        }}</b-alert>
 
-            <b-button block pill type="submit" variant="primary"
-                >Register</b-button
-            >
-        </b-form>
-    </div>
+        <b-button block pill type="submit" variant="primary">Register</b-button>
+    </b-form>
 </template>
 
 <script>
@@ -58,7 +54,7 @@ import { auth, userCollection } from "@/firebase";
 import store from "@/store";
 
 export default {
-    name: "Register",
+    name: "RegisterForm",
     data() {
         return {
             form: {
