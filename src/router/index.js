@@ -60,6 +60,11 @@ const routes = [
         meta: { requiresAuth: true },
         component: () => import("@/views/UserView"),
     },
+    {
+        path: "*",
+        name: "Not Found",
+        component: () => import("@/views/NotFoundView"),
+    },
 ];
 
 const router = new VueRouter({
