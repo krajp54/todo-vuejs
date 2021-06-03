@@ -85,6 +85,7 @@ export default {
                         });
 
                         store.state.user.userProfile = {
+                            id: user.user.uid,
                             name: user.user.displayName,
                             email: user.user.email,
                             picture: user.user.photoURL,
